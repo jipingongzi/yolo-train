@@ -4,7 +4,7 @@ import numpy as np
 from ultralytics import YOLO
 
 model = YOLO("yolo11l-seg.pt")
-# model.train(data="carparts-seg.yaml", epochs=1, imgsz=640)
+model.train(data="carparts-seg.yaml", epochs=1, imgsz=640)
 results = model.predict(source="car.png")
 print(model.names)
 for r in results:
